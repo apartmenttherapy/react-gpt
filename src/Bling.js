@@ -2,6 +2,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
+import {debounce} from "throttle-debounce";
 import invariant from "invariant";
 import deepEqual from "deep-equal";
 import hoistStatics from "hoist-non-react-statics";
@@ -489,6 +490,13 @@ class Bling extends Component {
             err
         );
     }
+
+    onMediaQueryChange = debounce(50, event => {
+        this.refresh();
+        if (this.props.onMediaQueryChange) {
+            this.props.onMediaQueryChange(event);
+        }
+    });
 
     getRenderWhenViewable(props = this.props) {
         return props.renderWhenViewable !== undefined
