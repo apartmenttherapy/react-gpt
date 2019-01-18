@@ -498,7 +498,7 @@ class Bling extends Component {
     onMediaQueryChange() {
         // Debounce refresh, since it can be called multiple times if there are
         // multiple MQ listeners, e.g. the current screen might match
-        // `(min-width: 1024px)` AND (min-width: 768px), or an MQ might change
+        // `(min-width: 1024px)` AND `(min-width: 768px)`, or an MQ might change
         // from matching to not matching, while another does the opposite.
         // The slot should only be refreshed once per "resize" otherwise there
         // might be unnecessary calls to GPT.
