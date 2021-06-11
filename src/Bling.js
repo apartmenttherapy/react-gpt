@@ -406,7 +406,7 @@ class Bling extends Component {
             .catch(this.onScriptError.bind(this));
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const {propsEqual} = Bling._config;
         const {sizeMapping} = this.props;
         if (
