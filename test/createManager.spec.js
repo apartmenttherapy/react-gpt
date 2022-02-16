@@ -113,7 +113,7 @@ describe("createManager", () => {
     it("uses gpt when already exists", done => {
         window.googletag = googletag;
         adManager
-            .load("//www.googletagservices.com/tag/js/gpt-invalid.js")
+            .load("//securepubads.g.doubleclick.net/tag/js/gpt-invalid.js")
             .then(() => {
                 expect(adManager.isLoaded).to.be.true;
                 done();
@@ -132,7 +132,7 @@ describe("createManager", () => {
     it("handles invalid url", done => {
         adManager = createManager();
         adManager
-            .load("//www.googletagservices.com/tag/js/gpt-invalid.js")
+            .load("//securepubads.g.doubleclick.net/tag/js/gpt-invalid.js")
             .catch(err => {
                 expect(err.message).to.equal("failed to load script");
                 done();
