@@ -237,7 +237,7 @@ class Bling extends Component {
         /**
          * An optional string for GPT seed file url to override.
          */
-        seedFileUrl: "//securepubads.g.doubleclick.net/tag/js/gpt.js",
+        seedFileUrl: "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
         /**
          * An optional flag to indicate whether an ad should only render when it's fully in the viewport area. Default is `true`.
          */
