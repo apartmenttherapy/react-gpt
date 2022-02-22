@@ -2,7 +2,7 @@
 
 # React GPT
 
-[![npm Version](https://img.shields.io/npm/v/react-gpt.svg?style=flat-square)](https://www.npmjs.org/package/@atmedia/react-gpt)
+[![npm Version](https://img.shields.io/npm/v/@atmedia/react-gpt.svg?style=flat-square)](https://www.npmjs.org/package/@atmedia/react-gpt)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
 A [React](https://github.com/facebook/react) component for [Google Publisher Tags](https://developers.google.com/doubleclick-gpt/?hl=en).
