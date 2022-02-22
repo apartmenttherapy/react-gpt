@@ -90,7 +90,7 @@ class Bling extends Component {
             PropTypes.object
         ]),
         /**
-         * An optional HTML content for the slot. If specified, the ad will render with the HTML content using content service.
+         * An optional HTML content for the slot. If specified, the ad will render with the HTML content using innerHTML.
          *
          * @property content
          */
