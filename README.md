@@ -27,7 +27,7 @@ A [React](https://github.com/facebook/react) component for [Google Publisher Tag
 ## Installation
 
 ```
-$ yarn react-gpt
+$ yarn @atmedia/react-gpt
 ```
 
 React GPT depends on [Promise](https://promisesaplus.com/) to be available in browser. If your application support the browser which doesn't support Promise, please include the polyfill.
@@ -37,7 +37,7 @@ React GPT depends on [Promise](https://promisesaplus.com/) to be available in br
 Import React GPT and pass props to the component.
 
 ```js
-import {Bling as GPT} from "react-gpt";
+import {Bling as GPT} from "@atmedia/react-gpt";
 
 class Application extends React.Component {
     render() {
@@ -59,7 +59,7 @@ To enable [Single Request Mode](https://support.google.com/dfp_sb/answer/181071?
 It defaults to `Asynchronous Rendering Mode` if not set.
 
 ```js
-import {Bling as GPT} from "react-gpt";
+import {Bling as GPT} from "@atmedia/react-gpt";
 
 GPT.enableSingleRequest();
 
@@ -90,7 +90,7 @@ The above example will make one request to the server to render both ads which m
 If you pass `sizeMapping` props instead of `slotSize`, React GPT listens for the viewport width change and refreshes an ad when the break point is hit.
 
 ```js
-import {Bling as GPT} from "react-gpt";
+import {Bling as GPT} from "@atmedia/react-gpt";
 
 class Application extends React.Component {
     render() {
