@@ -90,7 +90,7 @@ class Bling extends Component {
             PropTypes.object
         ]),
         /**
-         * An optional HTML content for the slot. If specified, the ad will render with the HTML content using content service.
+         * An optional HTML content for the slot. If specified, the ad will render with the HTML content using innerHTML.
          *
          * @property content
          */
@@ -690,7 +690,6 @@ class Bling extends Component {
             categoryExclusion,
             collapseEmptyDiv,
             safeFrameConfig,
-            content,
             clickUrl,
             forceSafeFrame
         } = props;
@@ -742,20 +741,15 @@ class Bling extends Component {
         }
 
         // GPT checks if the same service is already added.
-        if (content) {
-            adSlot.addService(Bling._adManager.googletag.content());
-        } else {
-            adSlot.addService(Bling._adManager.googletag.pubads());
-        }
+        adSlot.addService(Bling._adManager.googletag.pubads());
     }
 
     display() {
         const {content} = this.props;
         const divId = this._divId;
-        const adSlot = this._adSlot;
 
         if (content) {
-            Bling._adManager.googletag.content().setContent(adSlot, content);
+            document.getElementById(divId).innerHTML = content;
         } else {
             if (
                 !Bling._adManager._disableInitialLoad &&
@@ -776,12 +770,6 @@ class Bling extends Component {
     clear() {
         const adSlot = this._adSlot;
         if (adSlot && adSlot.hasOwnProperty("getServices")) {
-            // googletag.ContentService doesn't clear content
-            const services = adSlot.getServices();
-            if (this._divId && services.some(s => !!s.setContent)) {
-                document.getElementById(this._divId).innerHTML = "";
-                return;
-            }
             Bling._adManager.clear([adSlot]);
         }
     }
