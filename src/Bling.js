@@ -1,5 +1,5 @@
 /* eslint-disable react/sort-comp */
-import React, {Component, Fragment} from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 import {debounce} from "throttle-debounce";
@@ -639,6 +639,7 @@ class Bling extends Component {
         const slotSize = this.getSlotSize();
 
         if (!this._adSlot) {
+            // May need additional OOP logic later
             if (outOfPage) {
                 this._adSlot = Bling._adManager.googletag.defineOutOfPageSlot(
                     adUnitPath,
@@ -800,9 +801,9 @@ class Bling extends Component {
             this._adSlot = null;
         }
         this._divId = id || Bling._adManager.generateDivId();
-        
+
         if (this.props.outOfPage) {
-            return <Fragment />;
+            return null;
         }
 
         return <div id={this._divId} style={style} />;
