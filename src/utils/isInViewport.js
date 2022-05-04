@@ -15,10 +15,14 @@ export default function isInViewport(el, [width, height] = [0, 0], offset = 0) {
         bottom: window.innerHeight,
         right: window.innerWidth
     };
+
     const inViewport =
         rect.bottom >= viewport.top + height * offset &&
         rect.right >= viewport.left + width * offset &&
         rect.top <= viewport.bottom - height * offset &&
         rect.left <= viewport.right - width * offset;
+
+    console.log(`${el.parentElement.getAttribute('class')}. offset is ${offset}. top is ${rect.top}, vs ${viewport.bottom - height * offset}. bottom is ${rect.bottom}, vs ${viewport.top + height * offset}. in viewport? ${inViewport}`);
+  
     return inViewport;
 }
