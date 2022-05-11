@@ -389,7 +389,7 @@ class Bling extends Component {
     }
 
     get viewableThreshold() {
-        return this.props.viewableThreshold !== undefined
+        return !isNaN(this.props.viewableThreshold)
             ? this.props.viewableThreshold
             : Bling._config.viewableThreshold;
     }
