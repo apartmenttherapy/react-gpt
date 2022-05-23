@@ -8,7 +8,6 @@ import deepEqual from "deep-equal";
 import hoistStatics from "hoist-non-react-statics";
 import Events from "./Events";
 import filterPropsSimple from "./utils/filterProps";
-import { isInViewport } from "./utils/isInViewport";
 import {createManager, pubadsAPI} from "./createManager";
 /**
  * An Ad Component using Google Publisher Tags.
@@ -558,12 +557,7 @@ class Bling extends Component {
             return el.offsetParent === null || el.style.display === "none";
         };
 
-        const isThisHidden = isHidden();
-        // && isHidden
         if (inViewport && isHidden() === false) {
-            const el = ReactDOM.findDOMNode(this);
-            console.log(el);
-            console.log(isThisHidden);
             console.log(
                 `This is the: ${slotSize} and this is the VT: ${
                     this.viewableThreshold
