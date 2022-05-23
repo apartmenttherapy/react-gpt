@@ -558,11 +558,6 @@ class Bling extends Component {
         };
 
         if (inViewport && isHidden() === false) {
-            console.log(
-                `This is the: ${slotSize} and this is the VT: ${
-                    this.viewableThreshold
-                }`
-            );
             this.setState({inViewport: true});
         }
     }
