@@ -557,7 +557,7 @@ class Bling extends Component {
             return el.offsetParent === null || el.style.display === "none";
         };
 
-        if (inViewport && isHidden() === false) {
+        if (inViewport && !isHidden()) {
             this.setState({inViewport: true});
         }
     }
