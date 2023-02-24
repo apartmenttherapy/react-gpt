@@ -1,6 +1,6 @@
 {
     "name": "@atmedia/react-gpt",
-    "version": "2.1.6",
+    "version": "2.1.7",
     "description": "A react display ad component using Google Publisher Tag",
     "main": "lib/index.js",
     "jsnext:main": "es/index.js",
@@ -117,8 +117,7 @@
         "pretest": "npm run build",
         "prepublish": "npm run build && npm run build:es && npm run build:umd && npm run build:umd:min",
         "test": "npm run lint && karma start",
-        "update-apilist": "node ./scripts/updateAPIList.js",
-        "prepare": "npm run build"
+        "update-apilist": "node ./scripts/updateAPIList.js"
     },
     "config": {
         "commitizen": {
