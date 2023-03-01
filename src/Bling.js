@@ -1,7 +1,6 @@
 /* eslint-disable react/sort-comp */
-import React, {Component} from "react";
+import * as React from "react";
 import PropTypes from "prop-types";
-import ReactDOM from "react-dom";
 import {debounce} from "throttle-debounce";
 import invariant from "invariant";
 import deepEqual from "deep-equal";
@@ -22,7 +21,7 @@ import {createManager, pubadsAPI} from "./createManager";
  * @fires Bling#Events.SLOT_VISIBILITY_CHANGED
  * @fires Bling#Events.SLOT_LOADED
  */
-class Bling extends Component {
+class Bling extends React.Component {
     static propTypes = {
         /**
          * An optional string to be used as container div id.
@@ -398,6 +397,11 @@ class Bling extends Component {
         this.refresh();
     });
 
+    constructor(props) {
+        super(props);
+        this.wrapper = React.createRef();
+    }
+
     componentDidMount() {
         Bling._adManager.addInstance(this);
         Bling._adManager
@@ -547,13 +551,13 @@ class Bling extends Component {
         }
 
         const inViewport = Bling._adManager.isInViewport(
-            ReactDOM.findDOMNode(this),
+            this.wrapper.current,
             slotSize,
             this.viewableThreshold
         );
 
         const isHidden = () => {
-            const el = ReactDOM.findDOMNode(this);
+            const el = this.wrapper.current;
             return el.offsetParent === null || el.style.display === "none";
         };
 
@@ -812,7 +816,7 @@ class Bling extends Component {
             return null;
         }
 
-        return <div id={this._divId} style={style} />;
+        return <div id={this._divId} ref={this.wrapper} style={style} />;
     }
 }
 
