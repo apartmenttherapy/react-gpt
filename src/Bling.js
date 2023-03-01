@@ -801,7 +801,7 @@ class Bling extends React.Component {
                 height: slotSize[1]
             };
             // render node element instead of script element so that `inViewport` check works.
-            return <div style={emptyStyle} />;
+            return <div ref={this.wrapper} style={emptyStyle} />;
         }
 
         // clear the current ad if exists
@@ -816,7 +816,7 @@ class Bling extends React.Component {
             return null;
         }
 
-        return <div id={this._divId} ref={this.wrapper} style={style} />;
+        return <div id={this._divId} style={style} />;
     }
 }
 
