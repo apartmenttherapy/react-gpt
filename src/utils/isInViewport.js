@@ -23,4 +23,5 @@ export default function isInViewport(el, [width, height] = [0, 0], offset = 0) {
         rect.left <= viewport.right - width * offset;
 
     return inViewport;
+    // return true;
 }
