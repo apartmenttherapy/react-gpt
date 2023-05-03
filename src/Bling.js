@@ -651,7 +651,7 @@ class Bling extends React.Component {
         const {inViewport} = state;
         return (
             this.getRenderWhenViewable(props) &&
-            (props.doNotUseViewableThreshold || !inViewport)
+            (!props.doNotUseViewableThreshold && !inViewport)
         );
     }
 
