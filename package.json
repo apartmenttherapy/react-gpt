@@ -1,15 +1,6 @@
 {
-<<<<<<< HEAD
-    "name": "react-gpt",
-    "version": "2.0.1",
-=======
     "name": "@atmedia/react-gpt",
-<<<<<<< HEAD
-    "version": "2.0.2",
->>>>>>> 57c468a ((release) 2.0.2 (#12))
-=======
     "version": "2.0.3",
->>>>>>> ee024a1 ((release) 2.0.3 (#13))
     "description": "A react display ad component using Google Publisher Tag",
     "main": "lib/index.js",
     "jsnext:main": "es/index.js",
