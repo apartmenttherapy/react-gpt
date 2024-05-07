@@ -4,9 +4,8 @@ import PropTypes from "prop-types";
 import {debounce} from "throttle-debounce";
 import invariant from "invariant";
 import deepEqual from "deep-equal";
-import hoistStatics from "hoist-non-react-statics";
 import {Events, filterProps} from "./oneFile";
-import {createManager, pubadsAPI} from "./createManager";
+import {createManager} from "./createManager";
 /**
  * An Ad Component using Google Publisher Tags.
  * This component should work standalone w/o context.
@@ -854,12 +853,3 @@ class Bling extends React.Component {
         });
     }
 }
-
-// proxy pubads API through Bling
-export default hoistStatics(
-    Bling,
-    pubadsAPI.reduce((api, method) => {
-        api[method] = (...args) => Bling._adManager.pubadsProxy({method, args});
-        return api;
-    }, {})
-);
