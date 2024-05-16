@@ -95,7 +95,8 @@
         "compile": "babel src --out-dir lib",
         "lint": "eslint --fix src test examples",
         "start": "npm run build && env BABEL_ENV=examples node examples/server/index.js",
-        "prepublish": "npm run build && npm run build:es && npm run build:umd && npm run build:umd:min",
+        "pretest": "npm run build",
+        "prepublish": "npm run build && npm run build:es && npm run build:umd && npm run build:umd:min"
     },
     "config": {
         "commitizen": {

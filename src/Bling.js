@@ -216,12 +216,7 @@ class Bling extends React.Component {
      * @property reRenderProps
      * @static
      */
-    static reRenderProps = [
-        "adUnitPath",
-        "slotSize",
-        "outOfPage",
-        "content"
-    ];
+    static reRenderProps = ["adUnitPath", "slotSize", "outOfPage", "content"];
     /**
      * An instance of ad manager.
      *
