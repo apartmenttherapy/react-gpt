@@ -433,8 +433,6 @@ export class AdManager extends EventEmitter {
         // A better fix to come...
         if ("updateCorrelator" in this.googletag.pubads()) {
             this.googletag.pubads().updateCorrelator();
-        } else {
-            console.warn("Ad: `updateCorrelator` has been removed from GPT");
         }
         return true;
     }
