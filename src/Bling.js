@@ -2,7 +2,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import {debounce} from "throttle-debounce";
-import invariant from "invariant";
 import deepEqual from "deep-equal";
 import hoistStatics from "hoist-non-react-statics";
 import {Events, filterProps} from "./oneFile";
@@ -387,11 +386,6 @@ class Bling extends React.Component {
      */
     static updateCorrelator() {
         Bling._adManager.updateCorrelator();
-    }
-
-    static set testManager(testManager) {
-        invariant(testManager, "Pass in createManagerTest to mock GPT");
-        Bling._adManager = testManager;
     }
 
     state = {
@@ -790,18 +784,11 @@ class Bling extends React.Component {
 
     render() {
         const {scriptLoaded} = this.state;
-        const {id, outOfPage, style} = this.props;
+        const {id, style} = this.props;
         const shouldNotRender = this.notInViewport(this.props, this.state);
 
         if (!scriptLoaded || shouldNotRender) {
             let slotSize = this.getSlotSize();
-
-            if (!outOfPage) {
-                invariant(
-                    slotSize,
-                    "Either 'slotSize' or 'sizeMapping' prop needs to be set."
-                );
-            }
 
             if (Array.isArray(slotSize) && Array.isArray(slotSize[0])) {
                 slotSize = slotSize[0];

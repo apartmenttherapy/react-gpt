@@ -1,6 +1,5 @@
 import EventEmitter from "eventemitter3";
 import {debounce, throttle} from "throttle-debounce";
-import invariant from "invariant";
 import {canUseDOM} from "exenv";
 import {Events, isInViewport} from "./oneFile";
 
