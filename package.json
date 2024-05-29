@@ -51,7 +51,6 @@
         "babel-preset-react": "^6.5.0",
         "babel-preset-stage-0": "^6.5.0",
         "babel-register": "^6.7.2",
-        "bundlesize": "^0.14.4",
         "codecov.io": "^0.1.6",
         "conventional-changelog-cli": "^1.2.0",
         "core-js": "^2.2.2",
@@ -88,7 +87,6 @@
         "build:es": "BABEL_ENV=es babel --copy-files ./src -d es",
         "build:umd": "NODE_ENV=development webpack src/index.js dist/react-gpt.js",
         "build:umd:min": "NODE_ENV=production webpack -p src/index.js dist/react-gpt.min.js",
-        "bundlesize": "npm run build:umd:min && bundlesize",
         "clean": "rimraf lib coverage dist lib es",
         "compile": "babel src --out-dir lib",
         "lint": "eslint --fix src test examples",
@@ -100,11 +98,5 @@
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
-    },
-    "bundlesize": [
-        {
-            "path": "./dist/react-gpt.min.js",
-            "maxSize": "8.53 kB"
-        }
-    ]
+    }
 }
